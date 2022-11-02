@@ -1,0 +1,37 @@
+version: "3.9"
+
+networks:
+  tec_test:
+    ipam:
+      config:
+        - subnet: 18.5.0.0/4
+
+services:
+
+  db:
+    image: postgres
+    container_name: yelp_db
+    ports:
+      - "5432:5432"
+    environment:
+      - DATABASE_HOST=127.0.0.1
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=QSA2ATzzM0M7bPU
+      - POSTGRES_DB=yelp
+    volumes:
+      - YOUR_PATH/db/:/var/lib/postgresql/
+    networks:
+      tec_test:
+        ipv4_address: 18.5.0.8
+
+  code:
+    image: python:3.10
+    container_name: yelp_code
+    stdin_open: true
+    ports:
+      - "8000:8000"
+    volumes:
+      - YOUR_PATH/:/home/
+    networks:
+      tec_test:
+        ipv4_address: 18.5.0.7
