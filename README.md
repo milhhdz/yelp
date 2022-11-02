@@ -63,18 +63,18 @@ La documentacion de la API fue hecha en **POSTMAN**
 - [Documentacion](https://documenter.getpostman.com/view/15229397/2s8YRmKDCt)
 
 # Diagrama
-![logo]()
+![alt text](https://raw.githubusercontent.com/milhhdz/yelp/master/images/01_diagrama.png)
 
 # Resultados
 ## _1_ Lista de los negocios
-![logo]()
+![alt text](https://raw.githubusercontent.com/milhhdz/yelp/master/images/02_list_business.png)
 ## _2_ Detalles del negocio
-![logo]()
+![alt text](https://raw.githubusercontent.com/milhhdz/yelp/master/images/03_retrieve_business.png)
 ## _3_ Lista de los usuarios
-![logo]()
+![alt text](https://raw.githubusercontent.com/milhhdz/yelp/master/images/04_list_users.png)
 ## _4_ Detalle del usuario
-![logo]()
+![alt text](https://raw.githubusercontent.com/milhhdz/yelp/master/images/05_retrieve_user.png)
 ## _5_ Lista de las reseñas
-![logo]()
+![alt text](https://raw.githubusercontent.com/milhhdz/yelp/master/images/06_list_reviews.png)
 ## _6_ Detalles de la reseña
-![logo]()
+![alt text](https://raw.githubusercontent.com/milhhdz/yelp/master/images/07_retrieve_review.png)
