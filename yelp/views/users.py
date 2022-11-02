@@ -27,7 +27,7 @@ class RetrieveUsersView(APIView):
         try:
             user = YelpUser.objects.get(user_id=user_id)
         except:
-            return Response({"user":"not found"}, status=HTTP_404_NOT_FOUND)
+            return Response({"errors":[{"user":"not found"}]}, status=HTTP_404_NOT_FOUND)
 
         friends = [id_.replace(" ", "") for id_ in user.friends.split(",")]
         users = RetrieveUsersSerializer(user).data

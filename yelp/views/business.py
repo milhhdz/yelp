@@ -25,7 +25,7 @@ class RetrieveBusinessView(APIView):
         try:
             business = Business.objects.get(business_id=business_id)
         except:
-            return Response({"business":"not found"}, status=HTTP_404_NOT_FOUND)
+            return Response({"errors":[{"business":"not found"}]}, status=HTTP_404_NOT_FOUND)
 
         business = RetrieveBusinessSerializer(business)
         return Response(business.data, status=HTTP_200_OK)

@@ -18,6 +18,7 @@ from django.urls import path
 
 from yelp.views.business import ListBusinessView, RetrieveBusinessView
 from yelp.views.users import ListUsersView, RetrieveUsersView
+from yelp.views.reviews import ListReviewsView, RetrieveReviewsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +26,6 @@ urlpatterns = [
     path('retrieve/business/', RetrieveBusinessView.as_view()),
     path('list/users/', ListUsersView.as_view()),
     path('retrieve/users/', RetrieveUsersView.as_view()),
+    path('list/reviews/', ListReviewsView.as_view()),
+    path('retrieve/reviews/', RetrieveReviewsView.as_view()),
 ]
