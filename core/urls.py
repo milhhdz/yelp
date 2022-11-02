@@ -21,5 +21,5 @@ from yelp.views.business import ListBusinessView, RetrieveBusinessView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('list/business/', ListBusinessView.as_view()),
-    path('retrieve/business/<str:business_id>/', RetrieveBusinessView.as_view()),
+    path('retrieve/business/', RetrieveBusinessView.as_view()),
 ]

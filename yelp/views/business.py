@@ -12,9 +12,15 @@ class ListBusinessView(ListAPIView):
     serializer_class = ListBusinessSerializer
     pagination_class = LimitOffsetPagination
 
-
 class RetrieveBusinessView(APIView):
-    def get(self, requets, business_id=None):
+    def get(self, requets):
+        print(requets.data)
+        serializer = GetBusinessSerializer(data=requets.data)
+
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+        
+        business_id = serializer.data["business_id"]
 
         try:
             business = Business.objects.get(business_id=business_id)
@@ -23,21 +29,3 @@ class RetrieveBusinessView(APIView):
 
         business = RetrieveBusinessSerializer(business)
         return Response(business.data, status=HTTP_200_OK)
-        
-
-    # def get(self, request):
-    #     query = Business.objects.only("business_id","name","address","city","state").all()
-    #     serializer = ListBusinessSerializer(query, many=True)
-
-    #     return Response(serializer.data, status=HTTP_200_OK)
-
-# class ListBusinessView(APIView):
-#     def get(self, request):
-#         try:
-#             query = 
-#         except:
-#             pass
-#         query = Business.objects.only("business_id","name","address","city","state").all()
-#         serializer = ListBusinessSerializer(query, many=True)
-
-#         return Response(serializer.data, status=HTTP_200_OK)
